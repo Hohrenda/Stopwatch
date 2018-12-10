@@ -50,8 +50,9 @@ namespace AnalogClockElement
         public void ResetTimer()
         {
             Seconds = 0;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1);
-            Thread.Sleep(2);
+            double secAngle = Seconds * 6;
+            ((RotateTransform)((TransformGroup)secondArrow.RenderTransform)
+                .Children[1]).Angle = secAngle;
             dispatcherTimer.Stop();
         }
 
