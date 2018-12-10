@@ -8,11 +8,15 @@
         Title="MainWindow" Height="460" Width="460" SizeChanged="Window_SizeChanged">
     <UniformGrid>
         <local:AnalogClock x:Name="clock"></local:AnalogClock>
+        
+        
         <StackPanel>
             <Button Click="Button_Click">stop</Button>
             <Button Click="Button_Click_1">start</Button>
             <Button Click="Button_Click">+</Button>
         </StackPanel>
+
+        <local:Stopwatch x:Name="stopwatch"></local:Stopwatch>
         
     </UniformGrid>
 </Window>

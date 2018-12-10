@@ -19,7 +19,7 @@ namespace AnalogClockElement
     /// <summary>
     /// Логика взаимодействия для AnalogClock.xaml
     /// </summary>
-    public partial class AnalogClock : UserControl
+    public partial class Stopwatch : UserControl
     {
         //public double parentHeight = 460;
         //public double parentWidth = 443;
@@ -28,7 +28,7 @@ namespace AnalogClockElement
 
         System.Windows.Threading.DispatcherTimer dispatcherTimer =
             new System.Windows.Threading.DispatcherTimer();
-        public AnalogClock()
+        public Stopwatch()
         {
             InitializeComponent();
 
@@ -52,13 +52,13 @@ namespace AnalogClockElement
             }
 
             double hourAngle = (DateTime.Now.Hour + (DateTime.Now.Minute / 60d)) * 30;
-           
+
             //Console.WriteLine(hourAngle);
             ((RotateTransform)((TransformGroup)hoursArrow.RenderTransform)
                 .Children[1]).Angle = hourAngle;
 
             double minAngle = DateTime.Now.Minute * 6;
-            
+
             //Console.WriteLine(minAngle);
             ((RotateTransform)((TransformGroup)minuteArrow.RenderTransform)
                 .Children[1]).Angle = minAngle;
@@ -130,7 +130,8 @@ namespace AnalogClockElement
             }
         }
 
-        public void start() {
+        public void start()
+        {
 
             if (!mIsForvard)
             {
