@@ -21,6 +21,8 @@
             <Button Name="StartStopwatch" Click="StartStopwatch_Click">Start</Button>
             <Button Name="StopStopwatch" Click="StopStopwatch_Click">Stop</Button>
             <Button Name="ResetStopwatch" Click="ResetStopwatch_Click">Reset</Button>
+
         </StackPanel>
+        
     </UniformGrid>
 </Window>

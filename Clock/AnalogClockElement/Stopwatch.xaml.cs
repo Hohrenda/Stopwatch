@@ -78,6 +78,7 @@ namespace AnalogClockElement
             {
                 Seconds = 0;
             }
+            
         }
 
         public static T FindParent<T>(DependencyObject child) where T : DependencyObject
