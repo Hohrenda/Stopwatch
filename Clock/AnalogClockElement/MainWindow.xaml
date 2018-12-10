@@ -1,0 +1,18 @@
+﻿<Window x:Class="AnalogClockElement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnalogClockElement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="460" SizeChanged="Window_SizeChanged">
+    <UniformGrid>
+        <local:AnalogClock x:Name="clock"></local:AnalogClock>
+        <StackPanel>
+            <Button Click="Button_Click">stop</Button>
+            <Button Click="Button_Click_1">start</Button>
+            <Button Click="Button_Click">+</Button>
+        </StackPanel>
+        
+    </UniformGrid>
+</Window>
