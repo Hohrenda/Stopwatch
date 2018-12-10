@@ -112,7 +112,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Stopwatch.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Часы.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

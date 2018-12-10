@@ -8,7 +8,7 @@
              d:DesignHeight="400" d:DesignWidth="400">
     <UniformGrid x:Name="canvasWindow" SizeChanged="canvasWindow_SizeChanged">
         <UniformGrid.Background>
-            <ImageBrush ImageSource="Image/Часы.png"></ImageBrush>
+            <ImageBrush ImageSource="Image/Stopwatch.png"></ImageBrush>
         </UniformGrid.Background>
         <Canvas>
             <Line

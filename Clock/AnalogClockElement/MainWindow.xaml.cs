@@ -83,5 +83,20 @@ namespace AnalogClockElement
             clock.mIsForvard = false;
             clock.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
         }
+
+        private void StopStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            stopwatch.StopTimer();
+        }
+
+        private void StartStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            stopwatch.StartTimer();
+        }
+
+        private void ResetStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            stopwatch.ResetTimer();
+        }
     }
 }

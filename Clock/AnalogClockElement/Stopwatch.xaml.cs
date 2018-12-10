@@ -28,7 +28,7 @@ namespace AnalogClockElement
         public int Seconds = 0;
 
 
-        System.Windows.Threading.DispatcherTimer dispatcherTimer =
+        public System.Windows.Threading.DispatcherTimer dispatcherTimer =
             new System.Windows.Threading.DispatcherTimer();
         public Stopwatch()
         {
@@ -40,20 +40,33 @@ namespace AnalogClockElement
 
             //Console.WriteLine(this.Parent.GetValue(Window.HeightProperty));
 
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
+
             //dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1);
+            dispatcherTimer.Stop();
+        }
+
+        public void ResetTimer()
+        {
+            Seconds = 0;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1);
+            Thread.Sleep(2);
+            dispatcherTimer.Stop();
+        }
+
+        public void StartTimer()
+        {
             dispatcherTimer.Start();
+        }
+
+        public void StopTimer()
+        {
+            dispatcherTimer.Stop();
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if (mIsForvard)
-            {
-                dispatcherTimer.Stop();
-            }
-
-
 
             double secAngle = Seconds * 6;
             //Console.WriteLine(secAngle);
@@ -100,20 +113,12 @@ namespace AnalogClockElement
 
         protected override void OnRender(DrawingContext drawingContext)
         {
-            base.OnRender(drawingContext);
-            if (!mIsForvard)
-            {
-                dispatcherTimer.Start();
-            }
+            //base.OnRender(drawingContext);
+            //if (!mIsForvard)
+            //{
+            //    dispatcherTimer.Start();
+            //}
         }
 
-        public void start()
-        {
-
-            if (!mIsForvard)
-            {
-                dispatcherTimer.Start();
-            }
-        }
     }
 }

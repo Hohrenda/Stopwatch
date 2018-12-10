@@ -18,9 +18,9 @@
 
         <local:Stopwatch x:Name="stopwatch"></local:Stopwatch>
         <StackPanel>
-            <Button Name="StartStopwatch" Click="StartStopwatch_Click">Start stopwatch</Button>
-            <Button Name="StopStopwatch" Click="StopStopwatch_Click">Stop stopwatch</Button>
-            <Button Name="ResetStopwatch" Click="ResetStopwatch_Click">Reset stopwatch</Button>
+            <Button Name="StartStopwatch" Click="StartStopwatch_Click">Start</Button>
+            <Button Name="StopStopwatch" Click="StopStopwatch_Click">Stop</Button>
+            <Button Name="ResetStopwatch" Click="ResetStopwatch_Click">Reset</Button>
         </StackPanel>
     </UniformGrid>
 </Window>
