@@ -24,33 +24,6 @@
                     </TransformGroup>
                 </Line.RenderTransform>
             </Line>
-
-            <Line
-            Name="minuteArrow"
-            X1="217" Y1="70"
-            X2="217" Y2="219"
-            Stroke="Black"
-            StrokeThickness="4">
-                <Line.RenderTransform>
-                    <TransformGroup>
-                        <SkewTransform CenterX="0.5"></SkewTransform>
-                        <RotateTransform CenterX="218" CenterY="219"></RotateTransform>
-                    </TransformGroup>
-                </Line.RenderTransform>
-            </Line>
-            <Line
-            Name="hoursArrow"
-            X1="217" Y1="100"
-            X2="217" Y2="219"
-            Stroke="Black"
-            StrokeThickness="6">
-                <Line.RenderTransform>
-                    <TransformGroup>
-                        <SkewTransform CenterX="0.5"></SkewTransform>
-                        <RotateTransform CenterX="218" CenterY="219"></RotateTransform>
-                    </TransformGroup>
-                </Line.RenderTransform>
-            </Line>
         </Canvas>
         <!--<Image x:Name="backImage"  Stretch="Uniform" Source="Image/Часы.png"></Image>-->
 

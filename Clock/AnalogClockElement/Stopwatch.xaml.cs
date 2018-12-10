@@ -25,6 +25,8 @@ namespace AnalogClockElement
         //public double parentWidth = 443;
         public bool mIsForvard = false;
         public double mAdditive = 0.0d;
+        public int Seconds = 0;
+
 
         System.Windows.Threading.DispatcherTimer dispatcherTimer =
             new System.Windows.Threading.DispatcherTimer();
@@ -40,7 +42,7 @@ namespace AnalogClockElement
 
             dispatcherTimer.Tick += dispatcherTimer_Tick;
             //dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 1);
             dispatcherTimer.Start();
         }
 
@@ -51,29 +53,17 @@ namespace AnalogClockElement
                 dispatcherTimer.Stop();
             }
 
-            double hourAngle = (DateTime.Now.Hour + (DateTime.Now.Minute / 60d)) * 30;
 
-            //Console.WriteLine(hourAngle);
-            ((RotateTransform)((TransformGroup)hoursArrow.RenderTransform)
-                .Children[1]).Angle = hourAngle;
 
-            double minAngle = DateTime.Now.Minute * 6;
-
-            //Console.WriteLine(minAngle);
-            ((RotateTransform)((TransformGroup)minuteArrow.RenderTransform)
-                .Children[1]).Angle = minAngle;
-
-            int sec = DateTime.Now.Second;
-            double secAngle = sec * 6;
+            double secAngle = Seconds * 6;
             //Console.WriteLine(secAngle);
             ((RotateTransform)((TransformGroup)secondArrow.RenderTransform)
                 .Children[1]).Angle = secAngle;
-
-            //Thread.Sleep(1000);
-            //Console.WriteLine(this.Parent.GetValue(Window.HeightProperty));
-            //this.Height = (double)this.Parent.GetValue(Window.HeightProperty);
-            //this.Width = (double)this.Parent.GetValue(Window.WidthProperty);
-            //Console.WriteLine(canvasWindow.ActualHeight);
+            Seconds++;
+            if (Seconds == 60)
+            {
+                Seconds = 0;
+            }
         }
 
         public static T FindParent<T>(DependencyObject child) where T : DependencyObject
@@ -106,19 +96,6 @@ namespace AnalogClockElement
             ((RotateTransform)((TransformGroup)secondArrow.RenderTransform)
                 .Children[1]).CenterY = canvasWindow.ActualHeight / 2;
 
-            minuteArrow.X2 = canvasWindow.ActualWidth / 2;
-            minuteArrow.Y2 = canvasWindow.ActualHeight / 2;
-            ((RotateTransform)((TransformGroup)minuteArrow.RenderTransform)
-                .Children[1]).CenterX = canvasWindow.ActualWidth / 2;
-            ((RotateTransform)((TransformGroup)minuteArrow.RenderTransform)
-                .Children[1]).CenterY = canvasWindow.ActualHeight / 2;
-
-            hoursArrow.X2 = canvasWindow.ActualWidth / 2;
-            hoursArrow.Y2 = canvasWindow.ActualHeight / 2;
-            ((RotateTransform)((TransformGroup)hoursArrow.RenderTransform)
-                .Children[1]).CenterX = canvasWindow.ActualWidth / 2;
-            ((RotateTransform)((TransformGroup)hoursArrow.RenderTransform)
-                .Children[1]).CenterY = canvasWindow.ActualHeight / 2;
         }
 
         protected override void OnRender(DrawingContext drawingContext)
